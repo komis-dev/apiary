@@ -43,3 +43,5 @@ jobs:
         gem push *.gem
       env:
         GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
+    - name: Setup Ruby, JRuby and TruffleRuby
+      uses: ruby/setup-ruby@v1.133.2
