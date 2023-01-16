@@ -1,0 +1,121 @@
+FORMAT: A1
+HOST: https://komis.docs.apiary.io
+
+# Komis
+
+What we do
+
+KOMIS is a management consulting company specialised in project and programme management in the field of international development.
+Based on long standing experience of cooperation with international donors, we combine the best of academic expertise with practical experiences from the field to help our clients to design and manage highly performing interventions with a long-term impact. 
+We do not just provide a solution; we work together with the clients in order to find the answer that best fits their needs and requirements.
+
+This is my very first website using API Bluprint, so keep your expectations low. You can, however, use our API to find out more about Komis, for instance.
+
+# A little about Blueprint
+
+The Blueprint for an Application Programming Interface. It's a robust, high-level language for describing web APIs.
+Every person who has any hand in the API lifecycle will find API Blueprint to be an easy and accessible tool. It has a grammar that is both brief and evocative. API Blueprint is a tool for rapidly designing and prototyping future APIs, as well as for documenting and testing APIs that have already been deployed, including those that are crucial to business operations.
+
+API Blueprint was developed with the intention of inspiring more abstract API design. API Blueprint is meant to encapsulate the behavior of the backend implementation while also decoupling its components to allow for modularity.
+
+Finally, it's worth mentioning that the styling concept lies at the heart of API Blueprint. The API Blueprint is a covenant for an API, analogous to tests in experimental development. Better API designs are often the result of pre-development considerations on the API and the protocol.
+
+When your API Blueprint is finalized, anybody may verify that it is being implemented as planned.
+
+## Questions Collection [/questions]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Where would you say we are based?",
+                "published_at": "2022-10-05T03:16:26.620Z",
+                "choices": [
+                    {
+                        "choice": "The moon",
+                        "votes": 0
+                    }, {
+                        "choice": "Zambia",
+                        "votes": 0
+                    }, {
+                        "choice": "Brussels",
+                        "votes": 0
+                    }, {
+                        "choice": "IN MY OWN HOUSE!",
+                        "votes": 0
+                    }
+                ]
+            }
+        ]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "What services do we provide?",
+                "published_at": "2022-10-05T03:16:26.620Z",
+                "choices": [
+                    {
+                        "choice": "Food delivery",
+                        "votes": 0
+                    }, {
+                        "choice": "Qualitative and Analytical Monitoring of projects",
+                        "votes": 0
+                    }, {
+                        "choice": "Food safety certifications ISO22000",
+                        "votes": 0
+                    }, {
+                        "choice": "All of the above AND MORE!",
+                        "votes": 0
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
